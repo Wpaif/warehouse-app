@@ -10,10 +10,10 @@ class WarehousesController < ApplicationController
   def create
     @warehouse = Warehouse.new(warehouse_params)
     if @warehouse.save
-      return redirect_to root_path
+      return redirect_to root_path, notice: 'Galpão cadastrado com sucesso'
     end
 
-    re
+    render :redirect_tonew
   end
 
   private
