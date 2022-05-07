@@ -32,10 +32,28 @@ describe 'Usuário cadastra um galpão' do
     click_on 'Enviar'
 
     # Assert
-    expect(current_path).to eq root_path
+    # expect(current_path).to eq root_path
     expect(page).to have_content 'Galpão cadastrado com sucesso'
     expect(page).to have_content 'Rio de Janeiro'
     expect(page).to have_content 'RIO'
+  end
+
+  it 'com dados inconpletos' do
+    # Act
+    visit root_path
+    click_on 'Cadastrar Galpão'
+    fill_in 'Nome', with: ''
+    fill_in 'Descrição',	with: ''
+    fill_in 'Código',	with: ''
+    fill_in 'Endereço',	with: ''
+    fill_in 'Cidade',	with: ''
+    fill_in 'CEP',	with: ''
+    fill_in 'Área',	with: ''
+    click_on 'Enviar'
+
+    # Assert
+    expect(page).not_to have_content 'Galpão cadastrado com sucesso'
+    expect(page).to have_content 'Galpão não cadastrado'
   end
 end
 # rubocop:enable Metrics/BlockLength
