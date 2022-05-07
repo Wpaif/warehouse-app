@@ -15,10 +15,6 @@
     </header>
 
     <main>
-      <% if %w[index show].include? params[:action] %>
-        <div> </div><%= link_to 'Cadastrar Galpão', new_warehouse_path %> </div>
-      <% end %>
-
       <% if flash[:notice] %>
         <div> <%= flash[:notice] %> </div>
       <% end %>

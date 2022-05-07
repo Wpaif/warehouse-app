@@ -1,7 +1,9 @@
 <h2>Galpões</h2>
 
+<div> <%= link_to 'Cadastrar Galpão', new_warehouse_path %> </div>
+
 <div>
-  <%= flash[:notice] %>
+  <%= flash[:notice] %> 
 </div>
 
 <% if @warehouses.empty? %>

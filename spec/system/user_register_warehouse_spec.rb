@@ -29,7 +29,7 @@ describe 'Usuário cadastra um galpão' do
     fill_in 'Cidade',	with: 'Rio de Janeiro'
     fill_in 'CEP',	with: '20100-100'
     fill_in 'Área',	with: '32000 m²'
-    click_on 'Enviar'
+    click_on 'Criar Galpão'
 
     # Assert
     # expect(current_path).to eq root_path
@@ -49,11 +49,20 @@ describe 'Usuário cadastra um galpão' do
     fill_in 'Cidade',	with: ''
     fill_in 'CEP',	with: ''
     fill_in 'Área',	with: ''
-    click_on 'Enviar'
+    click_on 'Criar Galpão'
 
     # Assert
     expect(page).not_to have_content 'Galpão cadastrado com sucesso'
     expect(page).to have_content 'Galpão não cadastrado'
+    expect(page).to have_content 'Nome não pode ficar em branco'
+    expect(page).to have_content 'Descrição não pode ficar em branco'
+    expect(page).to have_content 'Código não pode ficar em branco'
+    expect(page).to have_content 'Endereço não pode ficar em branco'
+    expect(page).to have_content 'Cidade não pode ficar em branco'
+    expect(page).to have_content 'CEP não pode ficar em branco'
+    expect(page).to have_content 'Área não pode ficar em branco'
+    expect(page).to have_content 'CEP não é válido'
+    expect(page).to have_content 'Código não possui o tamanho esperado (3 caracteres)'
   end
 end
-# rubocop:enable Metrics/BlockLength
+# rubocop:enable Metrics/Bl_ockLength
