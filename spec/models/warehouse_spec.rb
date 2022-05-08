@@ -124,8 +124,8 @@ RSpec.describe Warehouse, type: :model do
       end
 
       it 'false when name is already in use' do
-        Warehouse.create(name: 'Atlantis', code: 'CMD', address: 'Rua dos bobos, 0', cep: '01234-040',
-                         description: 'Warehouse from Neverland', area: 10_909, city: 'Neverland')
+        Warehouse.create!(name: 'Atlantis', code: 'CMD', address: 'Rua dos bobos, 0', cep: '01234-040',
+                          description: 'Warehouse from Neverland', area: 10_909, city: 'Neverland')
 
         second_warehouse = Warehouse.new(name: 'Atlantis', code: 'ATL', address: 'Underwhater, 0',
                                          cep: '01234-040', description: 'Submerged Warehouse',
