@@ -2,10 +2,6 @@
 
 <div> <%= link_to 'Cadastrar Galpão', new_warehouse_path %> </div>
 
-<div>
-  <%= flash[:notice] %> 
-</div>
-
 <% if @warehouses.empty? %>
     <p>Não existem galpões cadastrados</p>
   <% else %>
