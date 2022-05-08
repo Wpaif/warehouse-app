@@ -1,12 +1,3 @@
-<% if @warehouse.errors.any? %>
-  <p>Virifique os erros abaixo:</p>
-  <ul>
-    <% @warehouse.errors.full_messages.each do |message| %>
-      <li> <%= message %> </li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= form_with model: @warehouse do |f| %>
   <div>
     <%= f.label :name %>

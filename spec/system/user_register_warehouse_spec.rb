@@ -65,4 +65,3 @@ describe 'Usuário cadastra um galpão' do
     expect(page).to have_content 'Código não possui o tamanho esperado (3 caracteres)'
   end
 end
-# rubocop:enable Metrics/Bl_ockLength

@@ -1,5 +1,14 @@
 <h2>Novo Galpão</h2>
 
+<% if @warehouse.errors.any? %>
+  <p>Virifique os erros abaixo:</p>
+  <ul>
+    <% @warehouse.errors.full_messages.each do |message| %>
+      <li> <%= message %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= render partial: 'form'%>
 
 <%= link_to 'Voltar', root_path %>
