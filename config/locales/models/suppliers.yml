@@ -1,0 +1,25 @@
+pt-BR:
+  activerecord:
+    models:
+      supplier: Fornecedor
+    attributes:
+      supplier: 
+        brand_name: Nome
+        corporate_name: Razão Social
+        registered_number: CNPJ
+        full_address: Endereço
+        email: Email
+        phone_number: Telefone
+
+en:
+  activerecord:
+    models:
+      supplier: Supplier
+    attributes:
+      supplier: 
+        brand_name: Brand Name
+        corporate_name: Corporate Name
+        registered_number: Registered number
+        full_address: Address
+        email: Email
+        phone_number: Telephones
