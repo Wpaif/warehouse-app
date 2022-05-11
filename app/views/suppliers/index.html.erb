@@ -1,5 +1,37 @@
-<h1>Fornecedores</h1>
+<h2>Fornecedores</h2>
 
 <%= link_to 'Registrar Fornecedor', new_supplier_path %>
+
+<% unless @suppliers.any? %>
+  <p>Não há fornecedores cadastrados</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th> 
+        <th>Razão Social</th> 
+        <th>CNPJ</th> 
+        <th>Endereço</th> 
+        <th>Email</th> 
+        <th>Telefone</th> 
+      </tr>
+    </thead>  
+    <tbody>
+      <% @suppliers.each do |supplier| %>
+        <tr> 
+          <td> <%= link_to supplier.brand_name %> </td>
+          <td> <%= supplier.corporate_name %> </td>
+          <td> <%= supplier.registered_number %> </td>
+          <td> <%= supplier.full_address %> </td>
+          <td> <%= supplier.email %> </td>
+          <td> <%= supplier.phone_number %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+
 
 
