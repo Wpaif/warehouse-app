@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe 'Usuário ver' do
   it 'os fornecedores cadastrados' do
     Supplier.create!(brand_name: 'Organizações Tabajara', corporate_name: 'Organizações Tabajara SA',
@@ -41,3 +42,4 @@ describe 'Usuário ver' do
     expect(page).to have_css 'p', text: 'Não há fornecedores cadastrados'
   end
 end
+# rubocop:enable Metrics/BlockLength

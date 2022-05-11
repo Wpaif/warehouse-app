@@ -32,7 +32,7 @@ describe 'Usuário registra fornecedor' do
     fill_in 'Endereço', with: 'Rua do Bobos, 0'
     fill_in 'Email', with: 'org.tabajara@tabajara.com'
     fill_in 'Telefone', with: '(11) 9 1234-5678'
-    click_on 'Cadastrar Fornecedor'
+    click_on 'Criar Fornecedor'
 
     expect(current_path).to eq supplier_path(Supplier.first)
     expect(page).to have_css 'div', text: 'Fornecedor cadastrado com sucesso'
@@ -46,7 +46,7 @@ describe 'Usuário registra fornecedor' do
     fill_in 'Razão Social', with: ''
     fill_in 'CNPJ', with: ''
     fill_in 'Email', with: ''
-    click_on 'Cadastrar Fornecedor'
+    click_on 'Criar Fornecedor'
 
     within('div ul') do
       expect(page).to have_css 'li', text: 'Nome não pode ficar em branco'

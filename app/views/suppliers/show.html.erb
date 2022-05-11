@@ -1,3 +1,13 @@
 <h2> <%= @supplier.brand_name %> </h2>
 
+<section class='data'>
+  <p><strong>Nome:</strong> <%= @supplier.brand_name %> </p>
+  <p><strong>Razão Social:</strong> <%= @supplier.corporate_name %> </p>
+  <p><strong>CNPJ:</strong> <%= @supplier.registered_number %> </p>
+  <p><strong>Endereço:</strong> <%= @supplier.full_address %> </p>
+  <p><strong>Email:</strong> <%= @supplier.email %> </p>
+  <p><strong>Telefone:</strong> <%= @supplier.phone_number %> </p>
+</section>
+
+<%= link_to 'Editar', edit_supplier_path(@supplier) %>
 <%= link_to 'Voltar', suppliers_path %>
