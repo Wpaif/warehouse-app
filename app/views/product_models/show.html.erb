@@ -1,0 +1,17 @@
+<h2> <%= "#{@product_model.name} - #{@product_model.supplier.brand_name}" %> </h2>
+
+<dl>
+  <dt><strong>Peso</strong></dt>
+  <dd> <%= "#{@product_model.weight}g" %> </dd>
+  <dt><strong>Largura</strong></dt>
+  <dd> <%= "#{@product_model.width}cm" %> </dd>
+  <dt><strong>Altura</strong></dt>
+  <dd> <%= "#{@product_model.height}cm" %> </dd>
+  <dt><strong>Profundidade</strong></dt>
+  <dd> <%= "#{@product_model.depth}cm" %> </dd>
+  <dt><strong>SKU</strong></dt>
+  <dd> <%= "#{@product_model.sku}cm" %> </dd>
+</dl>
+
+<%# link_to 'Editar', new_product_model_path %>
+<%= link_to 'Voltar', product_models_path %>

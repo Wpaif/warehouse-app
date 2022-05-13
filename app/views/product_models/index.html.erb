@@ -1,0 +1,27 @@
+<h2> Modelos de Produtos </h2>
+
+<%= link_to 'Cadastrar Produto', new_product_model_path %>
+
+<% if @product_models.any? %>
+  <section class='supplier-container'>
+    
+    <% @product_models.each do |product_model| %>
+      <div class='supplier-content' style= 'margin: 10px 0; background: #c1c1c1'>
+        <h3> <%= product_model.name %> </h3>
+
+        <dl>
+          <dt>SKU</dt>
+          <dd> <%= product_model.sku %> </dd>
+          <dt>Fornecedor</dt>
+          <dd> <%= product_model.supplier.brand_name %> </dt>
+        </dl> 
+
+        <%= link_to 'Ver detalhes', product_model %>   
+      </div>
+
+    <% end %>
+    </section>
+
+<% else %>
+  <p> Não há produtos cadastrados </p>
+<% end %>

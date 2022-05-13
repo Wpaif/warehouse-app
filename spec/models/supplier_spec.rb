@@ -40,14 +40,14 @@ RSpec.describe Supplier, type: :model do
     context 'telephone in format' do
       it 'with expecial caracteres and/or spaces: (xx) x xxxx-xxxx' do
         supplier = Supplier.new(brand_name: 'Organizações Tabajara', corporate_name: 'Organizações Tabajara SA',
-                                registered_number: 1_234_567_891_234, full_address: 'Rua do Bobos, 0',
+                                registered_number: 2_234_567_891_234, full_address: 'Rua do Bobos, 0',
                                 email: 'org.tabajara@tabajara.com', phone_number: '(11) 9 1234-5678')
         expect(supplier.valid?).to eq true
       end
 
       it 'with only numbers' do
         supplier = Supplier.new(brand_name: 'Organizações Tabajara', corporate_name: 'Organizações Tabajara SA',
-                                registered_number: 1_234_567_891_234, full_address: 'Rua do Bobos, 0',
+                                registered_number: 2_234_567_891_234, full_address: 'Rua do Bobos, 0',
                                 email: 'org.tabajara@tabajara.com', phone_number: '11912345678')
         expect(supplier.valid?).to eq true
       end
