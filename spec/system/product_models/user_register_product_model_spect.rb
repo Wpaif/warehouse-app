@@ -23,8 +23,12 @@ describe 'Usuário registra um produto' do
 
   it 'com sucesso' do
     Supplier.create!(brand_name: 'Apple', corporate_name: 'Apple SA',
-                     registered_number: 1_234_567_891_234, full_address: 'Stone street, 0',
+                     registered_number: 1_234_567_891_234, full_address: 'Stone Street, 0',
                      email: 'sac@apple.com', phone_number: '(11) 9 1234-5678')
+
+    Supplier.create!(brand_name: 'Samsung', corporate_name: 'Samsung LTDA',
+                     registered_number: 7_241_421_534_997, full_address: 'Clown Street, 0',
+                     email: 'sac@samsung.com', phone_number: '(11) 9 4321-8765')
     visit root_path
     click_on 'Modelos de produtos'
     click_on 'Cadastrar Produto'
@@ -36,6 +40,15 @@ describe 'Usuário registra um produto' do
     fill_in 'Profundidade',	with: '1'
     fill_in 'SKU', with: 'IPHO-APPLE-XPTO90-HJLPO'
     select 'Apple', from: 'product_model_supplier_id'
+    click_on 'Criar Produto'
+
+    fill_in 'Nome',	with: 'TV 32"'
+    fill_in 'Peso',	with: '8000'
+    fill_in 'Largura',	with: '55'
+    fill_in 'Altura',	with: '45'
+    fill_in 'Profundidade',	with: '7'
+    fill_in 'SKU', with: 'TV32-SAMSU-XPTO90-HJLPO'
+    select 'Samsung', from: 'product_model_supplier_id'
     click_on 'Criar Produto'
 
     expect(current_path).to eq product_model_path(ProductModel.last)
