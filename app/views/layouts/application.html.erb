@@ -22,13 +22,23 @@
             <%= link_to 'Modelos de produtos', product_models_path %>
           </li>
         </ul>
+
+        <% unless user_signed_in? %>
+          <%= link_to 'Entrar', new_user_session_path %>
+        <% else %>
+          <strong>User:</strong> <%= current_user.email %>
+          <%= button_to 'Sair', destroy_user_session_path, method: :delete%>
+        <% end %>
       </nav>
     </header>
 
     <main>
-      <% if flash[:notice] %>
-        <div> <%= flash[:notice] %> </div>
-      <% end %>
+      <div>
+        <% if flash[:notice] || flash[:alert] %>
+         <p class="notice"><%= notice %></p>
+         <p class="alert"><%= alert %></p>
+        <% end %>
+      </div>
       
       <%= yield %>
     </main>
